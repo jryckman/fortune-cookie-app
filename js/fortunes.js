@@ -1,0 +1,22 @@
+const fortunes = [
+    "A beautiful, smart, and loving person will be coming into your life.",
+    "A dubious friend may be an enemy in camouflage.",
+    "A faithful friend is a strong defense.",
+    "A fresh start will put you on your way.",
+    "A golden egg of opportunity falls into your lap this month.",
+    "A lifetime friend shall soon be made.",
+    "A lifetime of happiness lies ahead of you.",
+    "A light heart carries you through all the hard times.",
+    "A new perspective will come with the new year.",
+    "A person is never too old to learn.",
+    "A pleasant surprise is waiting for you.",
+    "A smile will get you far.",
+    "A smooth long journey lies ahead of you.",
+    "A soft voice may be awfully persuasive.",
+    "Adventure can be real happiness.",
+    "All the effort you are making will ultimately pay off.",
+    "All will go well with your new project.",
+    "Any day above ground is a good day.",
+    "Believe in yourself and others will too.",
+    "Better ask twice than lose yourself once."
+];
