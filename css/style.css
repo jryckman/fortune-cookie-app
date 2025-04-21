@@ -28,78 +28,77 @@ h1 {
     width: 300px;
     height: 300px;
     margin: 0 auto;
+    mix-blend-mode: multiply;
 }
 
 .fortune-cookie {
-    width: 200px;
-    height: 100px;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
     cursor: pointer;
     transition: transform 0.3s ease;
-    perspective: 1000px;
 }
 
 .fortune-cookie:hover {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
-.cookie-half {
+.cookie-image {
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    position: absolute;
-    background: linear-gradient(135deg, #e6c07c 0%, #d4af6a 50%, #c19856 100%);
-    border-radius: 100px 100px 0 0;
-    transition: transform 0.5s ease;
-    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2),
-                0 2px 4px rgba(0,0,0,0.1);
+    object-fit: contain;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
 }
 
-.cookie-top {
-    transform-origin: center;
-    border-radius: 100px 100px 0 0;
-    background: linear-gradient(135deg, #e6c07c 0%, #d4af6a 50%, #c19856 100%);
+.cookie-image.closed {
+    opacity: 1;
+    visibility: visible;
 }
 
-.cookie-bottom {
-    transform-origin: center;
-    border-radius: 0 0 100px 100px;
-    background: linear-gradient(315deg, #c19856 0%, #d4af6a 50%, #e6c07c 100%);
+.cookie-image.open {
+    opacity: 0;
+    visibility: hidden;
 }
 
-.fortune-cookie.opened .cookie-top {
-    transform: rotateX(160deg) translateY(-20px);
+.fortune-cookie.opened .cookie-image.closed {
+    opacity: 0;
+    visibility: hidden;
 }
 
-.fortune-cookie.opened .cookie-bottom {
-    transform: rotateX(-20deg) translateY(20px);
+.fortune-cookie.opened .cookie-image.open {
+    opacity: 1;
+    visibility: visible;
 }
 
 .fortune-paper {
     position: absolute;
-    width: 150px;
-    background-color: white;
-    padding: 15px;
-    border-radius: 5px;
+    width: 120px;
+    background-color: #fff9f0;
+    padding: 12px;
+    border-radius: 3px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: all 0.5s ease;
-    z-index: 1;
+    z-index: 2;
+    font-family: 'Times New Roman', serif;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+    opacity: 0;
 }
 
 .fortune-cookie.opened + .fortune-paper {
-    transform: translate(-50%, -50%) translateY(-40px);
+    transform: translate(-50%, -120%);
     opacity: 1;
-}
-
-.fortune-paper p {
-    font-size: 14px;
-    color: #333;
-    line-height: 1.4;
 }
 
 .hidden {
@@ -123,7 +122,6 @@ button:hover {
     background-color: #45a049;
 }
 
-/* Mobile responsiveness */
 @media (max-width: 480px) {
     .container {
         padding: 10px;
@@ -141,11 +139,6 @@ button:hover {
 
     .fortune-cookie {
         width: 150px;
-        height: 75px;
-    }
-
-    .fortune-paper {
-        width: 120px;
-        padding: 10px;
+        height: 150px;
     }
 }
