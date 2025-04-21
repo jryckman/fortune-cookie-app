@@ -16,11 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
             fortuneCookie.classList.add('opened');
             fortuneText.textContent = getRandomFortune();
             
-            // Show fortune and button with slight delay for animation
+            // Show fortune and button with shorter delay for animation
             setTimeout(() => {
                 fortunePaper.classList.remove('hidden');
                 newFortuneButton.classList.remove('hidden');
-            }, 500);
+            }, 200);
         }
     }
 
