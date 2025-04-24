@@ -10,11 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
         return fortunes[randomIndex];
     }
 
+    function generateLuckyNumbers() {
+        const numbers = [];
+        while (numbers.length < 5) {
+            const num = Math.floor(Math.random() * 99) + 1;
+            if (!numbers.includes(num)) {
+                numbers.push(num);
+            }
+        }
+        return numbers.sort((a, b) => a - b).join(', ');
+    }
+
     function openCookie() {
         if (!isOpen) {
             isOpen = true;
             fortuneCookie.classList.add('opened');
-            fortuneText.textContent = getRandomFortune();
+            const fortune = getRandomFortune();
+            const luckyNumbers = generateLuckyNumbers();
+            fortuneText.innerHTML = `${fortune}<br><span class="lucky-numbers">Lucky Numbers: ${luckyNumbers}</span>`;
             
             // Show fortune and button with shorter delay for animation
             setTimeout(() => {

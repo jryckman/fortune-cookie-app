@@ -87,10 +87,10 @@ h1 {
 
 .fortune-paper {
     position: absolute;
-    width: 120px;
+    width: 300px;
     background-color: #fff9f0;
-    padding: 12px;
-    border-radius: 3px;
+    padding: 20px;
+    border-radius: 4px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -98,14 +98,39 @@ h1 {
     transition: all 0.2s ease;
     z-index: 2;
     font-family: 'Times New Roman', serif;
-    font-size: 14px;
-    line-height: 1.4;
+    font-size: 15px;
+    line-height: 1.5;
     text-align: center;
+    opacity: 1;
+    visibility: visible;
+    display: block;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fortune-paper p {
+    margin: 0;
+    text-align: center;
+}
+
+.fortune-paper .lucky-numbers {
+    color: #9d8cdb;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.fortune-paper.hidden {
     opacity: 0;
+    visibility: hidden;
+    display: none;
 }
 
 .fortune-cookie.opened + .fortune-paper {
-    transform: translate(-50%, -120%);
+    transform: translate(-50%, -130%);
     opacity: 1;
 }
 
@@ -113,7 +138,6 @@ h1 {
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
-    display: none !important;
     position: absolute !important;
     z-index: -1 !important;
 }
@@ -160,5 +184,11 @@ button:hover {
     .cookie-image {
         max-width: 150px;
         max-height: 150px;
+    }
+
+    .fortune-paper {
+        width: 250px;
+        padding: 12px 15px;
+        font-size: 14px;
     }
 }
